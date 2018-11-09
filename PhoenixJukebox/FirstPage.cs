@@ -18,10 +18,10 @@ namespace PhoenixJukebox
             InitializeComponent();
         }
 
-        string connectionString = "server = localhost; user id = root; password = prAc7ice2018!;";
+        string connectionString = "server = localhost; user id = root; password = prAc7ice2018!; database = jukebox";
         private void FirstPage_Load(object sender, EventArgs e)
         {
-
+            txtName.Select();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,6 +39,33 @@ namespace PhoenixJukebox
                 MessageBox.Show(ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
           
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
+                {
+                    if (con.State == System.Data.ConnectionState.Closed)
+                        con.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("insert into Playlist(songQue, Songs_songName) values ('"+priorityPicker.Text+"', '"+txtSong.Text.Trim()+"')", con))
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtSong.Text = priorityPicker.Text = string.Empty;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtName.Text = txtSong.Text = priorityPicker.Text = string.Empty;
         }
     }
 }
