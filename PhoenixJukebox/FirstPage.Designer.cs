@@ -36,22 +36,24 @@
             this.txtSong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnPlayshow = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConnect
             // 
             this.btnConnect.AutoSize = true;
-            this.btnConnect.Location = new System.Drawing.Point(12, 80);
+            this.btnConnect.Location = new System.Drawing.Point(399, 738);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(171, 30);
+            this.btnConnect.Size = new System.Drawing.Size(189, 30);
             this.btnConnect.TabIndex = 0;
-            this.btnConnect.Text = "Connect to Database";
+            this.btnConnect.Text = "Reconnect to Database";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnPlayshow);
             this.groupBox1.Controls.Add(this.priorityPicker);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnSave);
@@ -119,6 +121,16 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Priority:";
             // 
+            // btnPlayshow
+            // 
+            this.btnPlayshow.AutoSize = true;
+            this.btnPlayshow.Location = new System.Drawing.Point(6, 231);
+            this.btnPlayshow.Name = "btnPlayshow";
+            this.btnPlayshow.Size = new System.Drawing.Size(154, 45);
+            this.btnPlayshow.TabIndex = 8;
+            this.btnPlayshow.Text = "Show Playlist";
+            this.btnPlayshow.UseVisualStyleBackColor = true;
+            // 
             // FirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -146,6 +158,7 @@
         private System.Windows.Forms.TextBox txtSong;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPlayshow;
     }
 }
 
