@@ -37,6 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPlayshow = new System.Windows.Forms.Button();
+            this.boxGenre = new System.Windows.Forms.ComboBox();
+            this.genre = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +55,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.genre);
+            this.groupBox1.Controls.Add(this.boxGenre);
             this.groupBox1.Controls.Add(this.btnPlayshow);
             this.groupBox1.Controls.Add(this.priorityPicker);
             this.groupBox1.Controls.Add(this.btnCancel);
@@ -131,6 +135,24 @@
             this.btnPlayshow.Text = "Show Playlist";
             this.btnPlayshow.UseVisualStyleBackColor = true;
             // 
+            // boxGenre
+            // 
+            this.boxGenre.FormattingEnabled = true;
+            this.boxGenre.Location = new System.Drawing.Point(125, 146);
+            this.boxGenre.Name = "boxGenre";
+            this.boxGenre.Size = new System.Drawing.Size(189, 28);
+            this.boxGenre.TabIndex = 9;
+            this.boxGenre.SelectedIndexChanged += new System.EventHandler(this.boxGenre_SelectedIndexChanged);
+            // 
+            // genre
+            // 
+            this.genre.AutoSize = true;
+            this.genre.Location = new System.Drawing.Point(21, 150);
+            this.genre.Name = "genre";
+            this.genre.Size = new System.Drawing.Size(58, 20);
+            this.genre.TabIndex = 10;
+            this.genre.Text = "Genre:";
+            // 
             // FirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -139,6 +161,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnConnect);
             this.Name = "FirstPage";
+            this.ShowIcon = false;
             this.Text = "Jukebox Addition";
             this.Load += new System.EventHandler(this.FirstPage_Load);
             this.groupBox1.ResumeLayout(false);
@@ -159,6 +182,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPlayshow;
+        private System.Windows.Forms.Label genre;
+        private System.Windows.Forms.ComboBox boxGenre;
     }
 }
 
