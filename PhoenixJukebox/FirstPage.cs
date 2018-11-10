@@ -21,7 +21,7 @@ namespace PhoenixJukebox
         string connectionString = "server = localhost; user id = root; password = prAc7ice2018!; database = jukebox";
         private void FirstPage_Load(object sender, EventArgs e)
         {
-            txtName.Select();
+            txtSong.Select();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace PhoenixJukebox
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtName.Text = txtSong.Text = priorityPicker.Text = string.Empty;
+            txtSong.Text = priorityPicker.Text = string.Empty;
         }
     }
 }
