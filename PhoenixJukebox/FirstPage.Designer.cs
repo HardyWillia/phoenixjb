@@ -30,15 +30,15 @@
         {
             this.btnConnect = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.genre = new System.Windows.Forms.Label();
+            this.boxGenre = new System.Windows.Forms.ComboBox();
+            this.btnPlayshow = new System.Windows.Forms.Button();
             this.priorityPicker = new System.Windows.Forms.DomainUpDown();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtSong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnPlayshow = new System.Windows.Forms.Button();
-            this.boxGenre = new System.Windows.Forms.ComboBox();
-            this.genre = new System.Windows.Forms.Label();
+            this.boxSong = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,21 +55,50 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.boxSong);
             this.groupBox1.Controls.Add(this.genre);
             this.groupBox1.Controls.Add(this.boxGenre);
             this.groupBox1.Controls.Add(this.btnPlayshow);
             this.groupBox1.Controls.Add(this.priorityPicker);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.txtSong);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(30, 171);
+            this.groupBox1.Location = new System.Drawing.Point(30, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(530, 282);
+            this.groupBox1.Size = new System.Drawing.Size(530, 316);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add New Song to Queue";
+            this.groupBox1.Text = "Add Song to Playlist";
+            // 
+            // genre
+            // 
+            this.genre.AutoSize = true;
+            this.genre.Location = new System.Drawing.Point(21, 150);
+            this.genre.Name = "genre";
+            this.genre.Size = new System.Drawing.Size(58, 20);
+            this.genre.TabIndex = 10;
+            this.genre.Text = "Genre:";
+            // 
+            // boxGenre
+            // 
+            this.boxGenre.FormattingEnabled = true;
+            this.boxGenre.Location = new System.Drawing.Point(125, 146);
+            this.boxGenre.Name = "boxGenre";
+            this.boxGenre.Size = new System.Drawing.Size(189, 28);
+            this.boxGenre.TabIndex = 9;
+            this.boxGenre.SelectedIndexChanged += new System.EventHandler(this.boxGenre_SelectedIndexChanged);
+            // 
+            // btnPlayshow
+            // 
+            this.btnPlayshow.AutoSize = true;
+            this.btnPlayshow.Location = new System.Drawing.Point(21, 214);
+            this.btnPlayshow.Name = "btnPlayshow";
+            this.btnPlayshow.Size = new System.Drawing.Size(154, 45);
+            this.btnPlayshow.TabIndex = 8;
+            this.btnPlayshow.Text = "Show Playlist";
+            this.btnPlayshow.UseVisualStyleBackColor = true;
+            this.btnPlayshow.Click += new System.EventHandler(this.btnPlayshow_Click);
             // 
             // priorityPicker
             // 
@@ -81,7 +110,7 @@
             // btnCancel
             // 
             this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(404, 231);
+            this.btnCancel.Location = new System.Drawing.Point(419, 214);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(97, 45);
             this.btnCancel.TabIndex = 7;
@@ -92,20 +121,13 @@
             // btnSave
             // 
             this.btnSave.AutoSize = true;
-            this.btnSave.Location = new System.Drawing.Point(285, 231);
+            this.btnSave.Location = new System.Drawing.Point(300, 214);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 45);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // txtSong
-            // 
-            this.txtSong.Location = new System.Drawing.Point(125, 56);
-            this.txtSong.Name = "txtSong";
-            this.txtSong.Size = new System.Drawing.Size(276, 26);
-            this.txtSong.TabIndex = 5;
             // 
             // label3
             // 
@@ -125,33 +147,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Priority:";
             // 
-            // btnPlayshow
+            // boxSong
             // 
-            this.btnPlayshow.AutoSize = true;
-            this.btnPlayshow.Location = new System.Drawing.Point(6, 231);
-            this.btnPlayshow.Name = "btnPlayshow";
-            this.btnPlayshow.Size = new System.Drawing.Size(154, 45);
-            this.btnPlayshow.TabIndex = 8;
-            this.btnPlayshow.Text = "Show Playlist";
-            this.btnPlayshow.UseVisualStyleBackColor = true;
-            // 
-            // boxGenre
-            // 
-            this.boxGenre.FormattingEnabled = true;
-            this.boxGenre.Location = new System.Drawing.Point(125, 146);
-            this.boxGenre.Name = "boxGenre";
-            this.boxGenre.Size = new System.Drawing.Size(189, 28);
-            this.boxGenre.TabIndex = 9;
-            this.boxGenre.SelectedIndexChanged += new System.EventHandler(this.boxGenre_SelectedIndexChanged);
-            // 
-            // genre
-            // 
-            this.genre.AutoSize = true;
-            this.genre.Location = new System.Drawing.Point(21, 150);
-            this.genre.Name = "genre";
-            this.genre.Size = new System.Drawing.Size(58, 20);
-            this.genre.TabIndex = 10;
-            this.genre.Text = "Genre:";
+            this.boxSong.FormattingEnabled = true;
+            this.boxSong.Location = new System.Drawing.Point(125, 62);
+            this.boxSong.Name = "boxSong";
+            this.boxSong.Size = new System.Drawing.Size(354, 28);
+            this.boxSong.TabIndex = 12;
             // 
             // FirstPage
             // 
@@ -178,12 +180,12 @@
         private System.Windows.Forms.DomainUpDown priorityPicker;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtSong;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPlayshow;
         private System.Windows.Forms.Label genre;
         private System.Windows.Forms.ComboBox boxGenre;
+        private System.Windows.Forms.ComboBox boxSong;
     }
 }
 

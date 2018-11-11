@@ -16,17 +16,18 @@ namespace PhoenixJukebox
         public FirstPage()
         {
             InitializeComponent();
-            FillCombo();
+            FillSongCombo();
+            FillGenreCombo();
         }
 
         string connectionString = "server = localhost; user id = root; password = prAc7ice2018!; database = jukebox";
-        void FillCombo ()
+        void FillSongCombo ()
         {
             try
             {
                 MySqlConnection con = new MySqlConnection(connectionString);
 
-                MySqlCommand selectCommand = new MySqlCommand("select * from jukebox.album;", con);
+                MySqlCommand selectCommand = new MySqlCommand("select * from jukebox.songs;", con);
                 MySqlDataReader myReader;
                 
                 try
@@ -34,6 +35,38 @@ namespace PhoenixJukebox
                     con.Open();
                     myReader = selectCommand.ExecuteReader();
                    
+                    while (myReader.Read())
+                    {
+                        string sName = myReader.GetString("songName");
+                        boxSong.Items.Add(sName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void FillGenreCombo()
+        {
+            try
+            {
+                MySqlConnection con = new MySqlConnection(connectionString);
+
+                MySqlCommand selectCommand = new MySqlCommand("select * from jukebox.album;", con);
+                MySqlDataReader myReader;
+
+                try
+                {
+                    con.Open();
+                    myReader = selectCommand.ExecuteReader();
+
                     while (myReader.Read())
                     {
                         string sName = myReader.GetString("AlbGenre");
@@ -53,10 +86,10 @@ namespace PhoenixJukebox
             }
         }
 
-        
+
         private void FirstPage_Load(object sender, EventArgs e)
         {
-            txtSong.Select();
+            boxSong.Select();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,11 +117,11 @@ namespace PhoenixJukebox
                 {
                     if (con.State == System.Data.ConnectionState.Closed)
                         con.Open();
-                    using (MySqlCommand cmd = new MySqlCommand("insert into Playlist(songQue, Songs_songName) values ('"+priorityPicker.Text+"', '"+txtSong.Text.Trim()+"')", con))
+                    using (MySqlCommand cmd = new MySqlCommand("insert into Playlist(songQue, songName) values ('"+priorityPicker.Text+"', '"+boxSong.Text+"')", con))
                     {
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtSong.Text = priorityPicker.Text = string.Empty;
+                        priorityPicker.Text = string.Empty;
                     }
                 }
             }
@@ -100,12 +133,23 @@ namespace PhoenixJukebox
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtSong.Text = priorityPicker.Text = string.Empty;
+            priorityPicker.Text = string.Empty;
         }
 
         private void boxGenre_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPlayshow_Click(object sender, EventArgs e)
+        {
+            DisplayPlaylist dp1 = new DisplayPlaylist();
+            dp1.ShowDialog();
         }
     }
 }
