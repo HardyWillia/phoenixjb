@@ -18,6 +18,8 @@ namespace PhoenixJukebox
             InitializeComponent();
             FillSongCombo();
             FillGenreCombo();
+            FillArtistCombo();
+
         }
 
         string connectionString = "server = localhost; user id = root; password = prAc7ice2018!; database = jukebox";
@@ -86,6 +88,39 @@ namespace PhoenixJukebox
             }
         }
 
+        void FillArtistCombo()
+        {
+            try
+            {
+                MySqlConnection con = new MySqlConnection(connectionString);
+
+                MySqlCommand selectCommand = new MySqlCommand("select * from jukebox.songs;", con);
+                MySqlDataReader myReader;
+
+                try
+                {
+                    con.Open();
+                    myReader = selectCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+                        string sName = myReader.GetString("artistName");
+                        boxArtist.Items.Add(sName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         private void FirstPage_Load(object sender, EventArgs e)
         {
@@ -128,7 +163,7 @@ namespace PhoenixJukebox
                 {
                     if (con.State == System.Data.ConnectionState.Closed)
                         con.Open();
-                    using (MySqlCommand cmd = new MySqlCommand("insert into Playlist(songQue, songName) values ('"+priorityPicker.Text+"', '"+boxSong.Text+"')", con))
+                    using (MySqlCommand cmd = new MySqlCommand("insert into jukebox.playlist(songQue, Songs_songName, Songs_artistName) values ('"+priorityPicker.Text+"', '"+boxSong.Text+ "', '" + boxArtist.Text + "')", con))
                     {
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -144,7 +179,7 @@ namespace PhoenixJukebox
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            priorityPicker.Text = string.Empty;
+            boxGenre.Text = boxSong.Text = boxArtist.Text = priorityPicker.Text = string.Empty;
         }
 
         private void boxGenre_SelectedIndexChanged(object sender, EventArgs e)
