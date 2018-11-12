@@ -90,6 +90,17 @@ namespace PhoenixJukebox
         private void FirstPage_Load(object sender, EventArgs e)
         {
             boxSong.Select();
+            DomainUpDown.DomainUpDownItemCollection collection = this.priorityPicker.Items;
+            collection.Add("0");
+            collection.Add("1");
+            collection.Add("2");
+            collection.Add("3");
+            collection.Add("4");
+            collection.Add("5");
+
+            //Set the default number in the Priority Picker
+            this.priorityPicker.Text = "5";
+
         }
 
         private void button1_Click(object sender, EventArgs e)
