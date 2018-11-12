@@ -36,6 +36,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnForgot = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -75,9 +76,9 @@
             // button1
             // 
             this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(141, 239);
+            this.button1.Location = new System.Drawing.Point(137, 229);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 30);
+            this.button1.Size = new System.Drawing.Size(100, 40);
             this.button1.TabIndex = 4;
             this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = true;
@@ -86,9 +87,9 @@
             // btnLogin
             // 
             this.btnLogin.AutoSize = true;
-            this.btnLogin.Location = new System.Drawing.Point(289, 239);
+            this.btnLogin.Location = new System.Drawing.Point(268, 229);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(81, 30);
+            this.btnLogin.Size = new System.Drawing.Size(100, 40);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -96,15 +97,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnForgot);
             this.groupBox1.Controls.Add(this.txtUser);
             this.groupBox1.Controls.Add(this.btnLogin);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Location = new System.Drawing.Point(215, 146);
+            this.groupBox1.Location = new System.Drawing.Point(215, 113);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(408, 323);
+            this.groupBox1.Size = new System.Drawing.Size(420, 365);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sign In";
@@ -118,6 +120,16 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnForgot
+            // 
+            this.btnForgot.Location = new System.Drawing.Point(208, 321);
+            this.btnForgot.Name = "btnForgot";
+            this.btnForgot.Size = new System.Drawing.Size(206, 38);
+            this.btnForgot.TabIndex = 6;
+            this.btnForgot.Text = "Change Password";
+            this.btnForgot.UseVisualStyleBackColor = true;
+            this.btnForgot.Click += new System.EventHandler(this.btnForgot_Click);
             // 
             // Login
             // 
@@ -147,5 +159,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnForgot;
     }
 }
