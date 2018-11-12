@@ -70,5 +70,10 @@ namespace PhoenixJukebox
             reg.ShowDialog();
         }
 
+        private void btnForgot_Click(object sender, EventArgs e)
+        {
+            ResetLogin rl1 = new ResetLogin();
+            rl1.ShowDialog();
+        }
     }
 }

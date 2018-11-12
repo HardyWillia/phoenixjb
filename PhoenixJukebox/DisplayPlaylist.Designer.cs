@@ -28,26 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.viewPlaylist = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.jukeboxDataSet = new PhoenixJukebox.jukeboxDataSet();
+            this.jukeboxDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.viewPlaylist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // viewPlaylist
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 333);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(637, 402);
-            this.dataGridView1.TabIndex = 0;
+            this.viewPlaylist.AllowUserToAddRows = false;
+            this.viewPlaylist.AutoGenerateColumns = false;
+            this.viewPlaylist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewPlaylist.DataSource = this.jukeboxDataSetBindingSource;
+            this.viewPlaylist.Location = new System.Drawing.Point(25, 333);
+            this.viewPlaylist.Name = "viewPlaylist";
+            this.viewPlaylist.RowTemplate.Height = 28;
+            this.viewPlaylist.Size = new System.Drawing.Size(637, 402);
+            this.viewPlaylist.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -91,30 +98,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Now Playing";
             // 
+            // jukeboxDataSet
+            // 
+            this.jukeboxDataSet.DataSetName = "jukeboxDataSet";
+            this.jukeboxDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // jukeboxDataSetBindingSource
+            // 
+            this.jukeboxDataSetBindingSource.DataSource = this.jukeboxDataSet;
+            this.jukeboxDataSetBindingSource.Position = 0;
+            // 
             // DisplayPlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 765);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.viewPlaylist);
             this.Name = "DisplayPlaylist";
             this.Text = "DisplayPlaylist";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.DisplayPlaylist_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.viewPlaylist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView viewPlaylist;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.BindingSource jukeboxDataSetBindingSource;
+        private jukeboxDataSet jukeboxDataSet;
     }
 }
