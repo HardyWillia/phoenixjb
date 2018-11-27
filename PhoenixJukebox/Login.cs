@@ -42,7 +42,16 @@ namespace PhoenixJukebox
                 }
 
                 if(count == 1)
-                {
+                { 
+                    if (this.txtUser.Text == "ADMIN")
+                    {
+                        MessageBox.Show("Welcome Administrator");
+                        this.Hide();
+                        AdminPage a1 = new AdminPage();
+                        a1.ShowDialog();
+                    }
+
+               
                     MessageBox.Show("Username and password is correct");
                     this.Hide();
                     FirstPage p1 = new FirstPage();
