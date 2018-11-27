@@ -136,5 +136,8 @@
   <ItemGroup>
     <None Include="Resources\Jukebox-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\artwork\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
