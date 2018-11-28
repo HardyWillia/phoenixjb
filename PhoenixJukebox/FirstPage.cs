@@ -197,5 +197,10 @@ namespace PhoenixJukebox
             DisplayPlaylist dp1 = new DisplayPlaylist();
             dp1.ShowDialog();
         }
+
+        private void boxSong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

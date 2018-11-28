@@ -41,8 +41,8 @@ namespace PhoenixJukebox
                     count = count + 1;
                 }
 
-                if(count == 1)
-                { 
+                if (count == 1)
+                {
                     if (this.txtUser.Text == "ADMIN")
                     {
                         MessageBox.Show("Welcome Administrator");
@@ -50,12 +50,13 @@ namespace PhoenixJukebox
                         AdminPage a1 = new AdminPage();
                         a1.ShowDialog();
                     }
-
-               
-                    MessageBox.Show("Username and password is correct");
-                    this.Hide();
-                    FirstPage p1 = new FirstPage();
-                    p1.ShowDialog();
+                    else
+                    {
+                        MessageBox.Show("Username and password is correct");
+                        this.Hide();
+                        FirstPage p1 = new FirstPage();
+                        p1.ShowDialog();
+                    }
                 }
                 else if(count > 1)
                 {
