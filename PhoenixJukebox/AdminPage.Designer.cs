@@ -70,7 +70,6 @@
             this.textDelArt.Name = "textDelArt";
             this.textDelArt.Size = new System.Drawing.Size(174, 26);
             this.textDelArt.TabIndex = 1;
-            this.textDelArt.TextChanged += new System.EventHandler(this.textDelArt_TextChanged);
             // 
             // textDelSong
             // 
@@ -242,6 +241,7 @@
             this.btnHome.TabIndex = 22;
             this.btnHome.Text = "Go to Log-in";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnPlaylist
             // 
@@ -251,6 +251,7 @@
             this.btnPlaylist.TabIndex = 23;
             this.btnPlaylist.Text = "Playlist";
             this.btnPlaylist.UseVisualStyleBackColor = true;
+            this.btnPlaylist.Click += new System.EventHandler(this.btnPlaylist_Click);
             // 
             // pictureBox1
             // 
