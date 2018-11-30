@@ -34,7 +34,7 @@
             this.labelDeleteArtist = new System.Windows.Forms.Label();
             this.labelDelSong = new System.Windows.Forms.Label();
             this.labelAlbum = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.boxGenre = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.labelGenre = new System.Windows.Forms.Label();
             this.labelAlbName = new System.Windows.Forms.Label();
@@ -47,11 +47,13 @@
             this.labelSongArtist = new System.Windows.Forms.Label();
             this.labelSongTitle = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAddAlb = new System.Windows.Forms.Button();
             this.btnAddSong = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnPlaylist = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.addPic = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,17 +107,17 @@
             this.labelAlbum.TabIndex = 5;
             this.labelAlbum.Text = "Add Album";
             // 
-            // comboBox1
+            // boxGenre
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 124);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 6;
+            this.boxGenre.FormattingEnabled = true;
+            this.boxGenre.Location = new System.Drawing.Point(16, 124);
+            this.boxGenre.Name = "boxGenre";
+            this.boxGenre.Size = new System.Drawing.Size(121, 28);
+            this.boxGenre.TabIndex = 6;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(156, 124);
+            this.textBox3.Location = new System.Drawing.Point(10, 188);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 26);
             this.textBox3.TabIndex = 7;
@@ -132,7 +134,7 @@
             // labelAlbName
             // 
             this.labelAlbName.AutoSize = true;
-            this.labelAlbName.Location = new System.Drawing.Point(152, 164);
+            this.labelAlbName.Location = new System.Drawing.Point(8, 217);
             this.labelAlbName.Name = "labelAlbName";
             this.labelAlbName.Size = new System.Drawing.Size(100, 20);
             this.labelAlbName.TabIndex = 10;
@@ -215,18 +217,9 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnAddAlb
-            // 
-            this.btnAddAlb.Location = new System.Drawing.Point(669, 101);
-            this.btnAddAlb.Name = "btnAddAlb";
-            this.btnAddAlb.Size = new System.Drawing.Size(110, 35);
-            this.btnAddAlb.TabIndex = 20;
-            this.btnAddAlb.Text = "Add Album";
-            this.btnAddAlb.UseVisualStyleBackColor = true;
-            // 
             // btnAddSong
             // 
-            this.btnAddSong.Location = new System.Drawing.Point(669, 190);
+            this.btnAddSong.Location = new System.Drawing.Point(465, 314);
             this.btnAddSong.Name = "btnAddSong";
             this.btnAddSong.Size = new System.Drawing.Size(110, 35);
             this.btnAddSong.TabIndex = 21;
@@ -255,23 +248,41 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(284, 101);
+            this.pictureBox1.Location = new System.Drawing.Point(156, 101);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(201, 141);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            // 
+            // addPic
+            // 
+            this.addPic.Location = new System.Drawing.Point(363, 196);
+            this.addPic.Name = "addPic";
+            this.addPic.Size = new System.Drawing.Size(137, 29);
+            this.addPic.TabIndex = 25;
+            this.addPic.Text = "Add Picture";
+            this.addPic.UseVisualStyleBackColor = true;
+            this.addPic.Click += new System.EventHandler(this.addPic_Click);
+            // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 529);
+            this.Controls.Add(this.addPic);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnPlaylist);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnAddSong);
-            this.Controls.Add(this.btnAddAlb);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.labelSongTitle);
             this.Controls.Add(this.labelSongArtist);
@@ -284,7 +295,7 @@
             this.Controls.Add(this.labelAlbName);
             this.Controls.Add(this.labelGenre);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.boxGenre);
             this.Controls.Add(this.labelAlbum);
             this.Controls.Add(this.labelDelSong);
             this.Controls.Add(this.labelDeleteArtist);
@@ -307,7 +318,7 @@
         private System.Windows.Forms.Label labelDeleteArtist;
         private System.Windows.Forms.Label labelDelSong;
         private System.Windows.Forms.Label labelAlbum;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox boxGenre;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label labelGenre;
         private System.Windows.Forms.Label labelAlbName;
@@ -320,10 +331,12 @@
         private System.Windows.Forms.Label labelSongArtist;
         private System.Windows.Forms.Label labelSongTitle;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAddAlb;
         private System.Windows.Forms.Button btnAddSong;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnPlaylist;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.Button addPic;
     }
 }

@@ -17,11 +17,45 @@ namespace PhoenixJukebox
         public AdminPage()
         {
             InitializeComponent();
+            FillGenreCombo();
         }
 
         string connectionString = "server = localhost; user id = root; password = prAc7ice2018!; database = jukebox";
 
-    private void btnDelete_Click(object sender, EventArgs e)
+        void FillGenreCombo()
+        {
+            try
+            {
+                MySqlConnection con = new MySqlConnection(connectionString);
+
+                MySqlCommand selectCommand = new MySqlCommand("select distinct AlbGenre from jukebox.album;", con);
+                MySqlDataReader myReader;
+
+                try
+                {
+                    con.Open();
+                    myReader = selectCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+                        string sName = myReader.GetString("AlbGenre");
+                        boxGenre.Items.Add(sName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -43,7 +77,8 @@ namespace PhoenixJukebox
 
                 if (count == 1)
                 {
-                    myReader = deleteCommand.ExecuteReader();
+                    myReader 
+= deleteCommand.ExecuteReader();
                     MessageBox.Show("Deletion Successful");
 
                 }
@@ -60,6 +95,20 @@ namespace PhoenixJukebox
 
         }
 
+        private void addPic_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialog1.ShowDialog();
+                pictureBox1.ImageLocation = openFileDialog1.FileName;
+                this.Text = openFileDialog1.FileName;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -73,6 +122,7 @@ namespace PhoenixJukebox
             DisplayPlaylist p1 = new DisplayPlaylist();
             p1.ShowDialog();
         }
+
     }
 }
 
