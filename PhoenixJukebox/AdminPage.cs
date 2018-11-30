@@ -109,6 +109,28 @@ namespace PhoenixJukebox
             }
         }
 
+        private void btnAddAlb_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
+                {
+                    if (con.State == System.Data.ConnectionState.Closed)
+                        con.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("insert into jukebox.album(idAlbum, AlbName, AlbGenre, Albart) values ('" + priorityPicker.Text + "', '" + txtAlbName.Text + "', '" + boxGenre.Text + "')", con))
+                        
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        priorityPicker.Text = string.Empty;
+                    }
+                    con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -122,6 +144,7 @@ namespace PhoenixJukebox
             DisplayPlaylist p1 = new DisplayPlaylist();
             p1.ShowDialog();
         }
+
 
     }
 }

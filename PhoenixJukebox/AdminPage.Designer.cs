@@ -35,7 +35,7 @@
             this.labelDelSong = new System.Windows.Forms.Label();
             this.labelAlbum = new System.Windows.Forms.Label();
             this.boxGenre = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAlbName = new System.Windows.Forms.TextBox();
             this.labelGenre = new System.Windows.Forms.Label();
             this.labelAlbName = new System.Windows.Forms.Label();
             this.labelAlbArt = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.addPic = new System.Windows.Forms.Button();
+            this.btnAddAlb = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,12 +116,12 @@
             this.boxGenre.Size = new System.Drawing.Size(121, 28);
             this.boxGenre.TabIndex = 6;
             // 
-            // textBox3
+            // txtAlbName
             // 
-            this.textBox3.Location = new System.Drawing.Point(10, 188);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 7;
+            this.txtAlbName.Location = new System.Drawing.Point(10, 188);
+            this.txtAlbName.Name = "txtAlbName";
+            this.txtAlbName.Size = new System.Drawing.Size(100, 26);
+            this.txtAlbName.TabIndex = 7;
             // 
             // labelGenre
             // 
@@ -269,15 +270,26 @@
             this.addPic.Name = "addPic";
             this.addPic.Size = new System.Drawing.Size(137, 29);
             this.addPic.TabIndex = 25;
-            this.addPic.Text = "Add Picture";
+            this.addPic.Text = "Insert Pic";
             this.addPic.UseVisualStyleBackColor = true;
             this.addPic.Click += new System.EventHandler(this.addPic_Click);
+            // 
+            // btnAddAlb
+            // 
+            this.btnAddAlb.Location = new System.Drawing.Point(669, 101);
+            this.btnAddAlb.Name = "btnAddAlb";
+            this.btnAddAlb.Size = new System.Drawing.Size(110, 35);
+            this.btnAddAlb.TabIndex = 26;
+            this.btnAddAlb.Text = "Add Album";
+            this.btnAddAlb.UseVisualStyleBackColor = true;
+            this.btnAddAlb.Click += new System.EventHandler(this.btnAddAlb_Click);
             // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 529);
+            this.Controls.Add(this.btnAddAlb);
             this.Controls.Add(this.addPic);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnPlaylist);
@@ -294,7 +306,7 @@
             this.Controls.Add(this.labelAlbArt);
             this.Controls.Add(this.labelAlbName);
             this.Controls.Add(this.labelGenre);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtAlbName);
             this.Controls.Add(this.boxGenre);
             this.Controls.Add(this.labelAlbum);
             this.Controls.Add(this.labelDelSong);
@@ -319,7 +331,7 @@
         private System.Windows.Forms.Label labelDelSong;
         private System.Windows.Forms.Label labelAlbum;
         private System.Windows.Forms.ComboBox boxGenre;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAlbName;
         private System.Windows.Forms.Label labelGenre;
         private System.Windows.Forms.Label labelAlbName;
         private System.Windows.Forms.Label labelAlbArt;
@@ -338,5 +350,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.Button addPic;
+        private System.Windows.Forms.Button btnAddAlb;
     }
 }
