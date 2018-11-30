@@ -24,35 +24,19 @@ namespace PhoenixJukebox
         string connectionString = "server = localhost; user id = root; password = prAc7ice2018!; database = jukebox";
         void FillGenreCombo()
         {
-            try
-            {
-                MySqlConnection con = new MySqlConnection(connectionString);
-
-                MySqlCommand selectCommand = new MySqlCommand("select distinct AlbGenre from jukebox.album;", con);
-                MySqlDataReader myReader;
-
-                try
-                {
-                    con.Open();
-                    myReader = selectCommand.ExecuteReader();
-
-                    while (myReader.Read())
-                    {
-                        string sName = myReader.GetString("AlbGenre");
-                        boxGenre.Items.Add(sName);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                con.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            boxAddGenre.Items.Add("Alternative");
+            boxAddGenre.Items.Add("Blues");
+            boxAddGenre.Items.Add("Classic");
+            boxAddGenre.Items.Add("Country");
+            boxAddGenre.Items.Add("Electronic Dance Music");
+            boxAddGenre.Items.Add("Folk");
+            boxAddGenre.Items.Add("Gospel");
+            boxAddGenre.Items.Add("Heavy Metal");
+            boxAddGenre.Items.Add("Hip Hop");
+            boxAddGenre.Items.Add("Jazz");
+            boxAddGenre.Items.Add("Pop");
+            boxAddGenre.Items.Add("Reggae");
+            boxAddGenre.Items.Add("Rock");
         }
         void FillAlbumCombo()
         {
@@ -150,11 +134,14 @@ namespace PhoenixJukebox
                 {
                     if (con.State == System.Data.ConnectionState.Closed)
                         con.Open();
-                    using (MySqlCommand cmd = new MySqlCommand("insert into jukebox.album(AlbName, AlbGenre, Albart) values ('" + txtAlbName.Text + "', '" + boxGenre.Text + "', '" +pictureBox1.ImageLocation+"')", con))
+                    using (MySqlCommand cmd = new MySqlCommand("insert into jukebox.album(AlbName, AlbGenre, Albart) values ('" + txtAlbName.Text + "', '" + boxAddGenre.Text + "', '" +pictureBox1.ImageLocation+"')", con))
                         
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    this.Hide();
+                    AdminPage a1 = new AdminPage();
+                    a1.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -174,6 +161,9 @@ namespace PhoenixJukebox
                         " ('" + txtSongTitle.Text + "', '" + txtSongArt.Text + "', '" + txtSongLink.Text + "' ,  (select idAlbum from jukebox.album where albName = '" +boxAlbm.Text+ "'))", con))
                         cmd.ExecuteNonQuery();
                     MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    AdminPage a1 = new AdminPage();
+                    a1.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -195,6 +185,7 @@ namespace PhoenixJukebox
             DisplayPlaylist p1 = new DisplayPlaylist();
             p1.ShowDialog();
         }
+
 
     }
 }
