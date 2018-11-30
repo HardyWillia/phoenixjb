@@ -40,9 +40,9 @@
             this.labelAlbName = new System.Windows.Forms.Label();
             this.labelAlbArt = new System.Windows.Forms.Label();
             this.labelSong = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.boxAlbm = new System.Windows.Forms.ComboBox();
+            this.txtSongTitle = new System.Windows.Forms.TextBox();
+            this.txtSongArt = new System.Windows.Forms.TextBox();
             this.labelAlb = new System.Windows.Forms.Label();
             this.labelSongArtist = new System.Windows.Forms.Label();
             this.labelSongTitle = new System.Windows.Forms.Label();
@@ -52,9 +52,10 @@
             this.btnPlaylist = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.addPic = new System.Windows.Forms.Button();
             this.btnAddAlb = new System.Windows.Forms.Button();
+            this.txtSongLink = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,27 +160,27 @@
             this.labelSong.TabIndex = 12;
             this.labelSong.Text = "Add New Song";
             // 
-            // comboBox2
+            // boxAlbm
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 290);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 28);
-            this.comboBox2.TabIndex = 13;
+            this.boxAlbm.FormattingEnabled = true;
+            this.boxAlbm.Location = new System.Drawing.Point(12, 290);
+            this.boxAlbm.Name = "boxAlbm";
+            this.boxAlbm.Size = new System.Drawing.Size(121, 28);
+            this.boxAlbm.TabIndex = 13;
             // 
-            // textBox4
+            // txtSongTitle
             // 
-            this.textBox4.Location = new System.Drawing.Point(301, 292);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(158, 26);
-            this.textBox4.TabIndex = 14;
+            this.txtSongTitle.Location = new System.Drawing.Point(301, 292);
+            this.txtSongTitle.Name = "txtSongTitle";
+            this.txtSongTitle.Size = new System.Drawing.Size(158, 26);
+            this.txtSongTitle.TabIndex = 14;
             // 
-            // textBox5
+            // txtSongArt
             // 
-            this.textBox5.Location = new System.Drawing.Point(156, 290);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(129, 26);
-            this.textBox5.TabIndex = 15;
+            this.txtSongArt.Location = new System.Drawing.Point(156, 290);
+            this.txtSongArt.Name = "txtSongArt";
+            this.txtSongArt.Size = new System.Drawing.Size(129, 26);
+            this.txtSongArt.TabIndex = 15;
             // 
             // labelAlb
             // 
@@ -220,16 +221,17 @@
             // 
             // btnAddSong
             // 
-            this.btnAddSong.Location = new System.Drawing.Point(465, 314);
+            this.btnAddSong.Location = new System.Drawing.Point(669, 321);
             this.btnAddSong.Name = "btnAddSong";
             this.btnAddSong.Size = new System.Drawing.Size(110, 35);
             this.btnAddSong.TabIndex = 21;
             this.btnAddSong.Text = "Add Song";
             this.btnAddSong.UseVisualStyleBackColor = true;
+            this.btnAddSong.Click += new System.EventHandler(this.btnAddSong_Click);
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(233, 377);
+            this.btnHome.Location = new System.Drawing.Point(457, 520);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(110, 35);
             this.btnHome.TabIndex = 22;
@@ -239,11 +241,11 @@
             // 
             // btnPlaylist
             // 
-            this.btnPlaylist.Location = new System.Drawing.Point(349, 377);
+            this.btnPlaylist.Location = new System.Drawing.Point(582, 520);
             this.btnPlaylist.Name = "btnPlaylist";
             this.btnPlaylist.Size = new System.Drawing.Size(110, 35);
             this.btnPlaylist.TabIndex = 23;
-            this.btnPlaylist.Text = "Playlist";
+            this.btnPlaylist.Text = "Go to Playlist";
             this.btnPlaylist.UseVisualStyleBackColor = true;
             this.btnPlaylist.Click += new System.EventHandler(this.btnPlaylist_Click);
             // 
@@ -260,13 +262,9 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // openFileDialog2
-            // 
-            this.openFileDialog2.FileName = "openFileDialog2";
-            // 
             // addPic
             // 
-            this.addPic.Location = new System.Drawing.Point(363, 196);
+            this.addPic.Location = new System.Drawing.Point(507, 107);
             this.addPic.Name = "addPic";
             this.addPic.Size = new System.Drawing.Size(137, 29);
             this.addPic.TabIndex = 25;
@@ -284,11 +282,29 @@
             this.btnAddAlb.UseVisualStyleBackColor = true;
             this.btnAddAlb.Click += new System.EventHandler(this.btnAddAlb_Click);
             // 
+            // txtSongLink
+            // 
+            this.txtSongLink.Location = new System.Drawing.Point(26, 357);
+            this.txtSongLink.Name = "txtSongLink";
+            this.txtSongLink.Size = new System.Drawing.Size(433, 26);
+            this.txtSongLink.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 386);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 20);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Song link";
+            // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 529);
+            this.ClientSize = new System.Drawing.Size(842, 686);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtSongLink);
             this.Controls.Add(this.btnAddAlb);
             this.Controls.Add(this.addPic);
             this.Controls.Add(this.pictureBox1);
@@ -299,9 +315,9 @@
             this.Controls.Add(this.labelSongTitle);
             this.Controls.Add(this.labelSongArtist);
             this.Controls.Add(this.labelAlb);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.txtSongArt);
+            this.Controls.Add(this.txtSongTitle);
+            this.Controls.Add(this.boxAlbm);
             this.Controls.Add(this.labelSong);
             this.Controls.Add(this.labelAlbArt);
             this.Controls.Add(this.labelAlbName);
@@ -336,9 +352,9 @@
         private System.Windows.Forms.Label labelAlbName;
         private System.Windows.Forms.Label labelAlbArt;
         private System.Windows.Forms.Label labelSong;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox boxAlbm;
+        private System.Windows.Forms.TextBox txtSongTitle;
+        private System.Windows.Forms.TextBox txtSongArt;
         private System.Windows.Forms.Label labelAlb;
         private System.Windows.Forms.Label labelSongArtist;
         private System.Windows.Forms.Label labelSongTitle;
@@ -348,8 +364,9 @@
         private System.Windows.Forms.Button btnPlaylist;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.Button addPic;
         private System.Windows.Forms.Button btnAddAlb;
+        private System.Windows.Forms.TextBox txtSongLink;
+        private System.Windows.Forms.Label label1;
     }
 }
