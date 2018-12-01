@@ -30,6 +30,8 @@
         {
             this.btnConnect = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.boxArtist = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.boxSong = new System.Windows.Forms.ComboBox();
             this.genre = new System.Windows.Forms.Label();
             this.boxGenre = new System.Windows.Forms.ComboBox();
@@ -39,8 +41,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.boxArtist = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Song to Playlist";
             // 
+            // boxArtist
+            // 
+            this.boxArtist.FormattingEnabled = true;
+            this.boxArtist.Location = new System.Drawing.Point(125, 110);
+            this.boxArtist.Name = "boxArtist";
+            this.boxArtist.Size = new System.Drawing.Size(218, 28);
+            this.boxArtist.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Artist";
+            // 
             // boxSong
             // 
             this.boxSong.FormattingEnabled = true;
@@ -82,6 +99,7 @@
             this.boxSong.Name = "boxSong";
             this.boxSong.Size = new System.Drawing.Size(354, 28);
             this.boxSong.TabIndex = 12;
+            this.boxSong.SelectedIndexChanged += new System.EventHandler(this.boxSong_SelectedIndexChanged);
             // 
             // genre
             // 
@@ -158,23 +176,6 @@
             this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Priority:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Artist";
-            // 
-            // boxArtist
-            // 
-            this.boxArtist.FormattingEnabled = true;
-            this.boxArtist.Location = new System.Drawing.Point(125, 110);
-            this.boxArtist.Name = "boxArtist";
-            this.boxArtist.Size = new System.Drawing.Size(218, 28);
-            this.boxArtist.TabIndex = 14;
             // 
             // FirstPage
             // 

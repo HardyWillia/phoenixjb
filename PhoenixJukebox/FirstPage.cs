@@ -29,7 +29,7 @@ namespace PhoenixJukebox
             {
                 MySqlConnection con = new MySqlConnection(connectionString);
 
-                MySqlCommand selectCommand = new MySqlCommand("select * from jukebox.songs;", con);
+                MySqlCommand selectCommand = new MySqlCommand("select distinct songName from jukebox.songs;", con);
                 MySqlDataReader myReader;
                 
                 try
@@ -61,7 +61,7 @@ namespace PhoenixJukebox
             {
                 MySqlConnection con = new MySqlConnection(connectionString);
 
-                MySqlCommand selectCommand = new MySqlCommand("select * from jukebox.album;", con);
+                MySqlCommand selectCommand = new MySqlCommand("select distinct AlbGenre from jukebox.album;", con);
                 MySqlDataReader myReader;
 
                 try
@@ -87,14 +87,13 @@ namespace PhoenixJukebox
                 MessageBox.Show(ex.Message);
             }
         }
-
         void FillArtistCombo()
         {
             try
             {
                 MySqlConnection con = new MySqlConnection(connectionString);
 
-                MySqlCommand selectCommand = new MySqlCommand("select * from jukebox.songs;", con);
+                MySqlCommand selectCommand = new MySqlCommand("select distinct artistName from jukebox.songs;", con);
                 MySqlDataReader myReader;
 
                 try
@@ -196,6 +195,11 @@ namespace PhoenixJukebox
         {
             DisplayPlaylist dp1 = new DisplayPlaylist();
             dp1.ShowDialog();
+        }
+
+        private void boxSong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
