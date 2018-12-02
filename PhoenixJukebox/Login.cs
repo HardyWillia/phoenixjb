@@ -54,7 +54,7 @@ namespace PhoenixJukebox
                     {
                         MessageBox.Show("Username and password is correct");
                         this.Hide();
-                        FirstPage p1 = new FirstPage();
+                        FirstPage p1 = new FirstPage("Welcome to Phoenix Jukebox! " + txtUser.Text);
                         p1.ShowDialog();
                     }
                 }

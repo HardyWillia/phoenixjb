@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textDelArt = new System.Windows.Forms.TextBox();
             this.textDelSong = new System.Windows.Forms.TextBox();
             this.labelDeleteArtist = new System.Windows.Forms.Label();
@@ -55,10 +56,16 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.boxAddGenre = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.usrRequestData = new System.Windows.Forms.DataGridView();
+            this.jukeboxDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jukeboxDataSet = new PhoenixJukebox.jukeboxDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usrRequestData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // textDelArt
@@ -285,7 +292,7 @@
             this.groupBox2.Controls.Add(this.labelGenre);
             this.groupBox2.Location = new System.Drawing.Point(16, 143);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(787, 273);
+            this.groupBox2.Size = new System.Drawing.Size(936, 273);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Album";
@@ -312,11 +319,34 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete Song";
             // 
+            // usrRequestData
+            // 
+            this.usrRequestData.AllowUserToOrderColumns = true;
+            this.usrRequestData.AutoGenerateColumns = false;
+            this.usrRequestData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usrRequestData.DataSource = this.jukeboxDataSetBindingSource;
+            this.usrRequestData.Location = new System.Drawing.Point(16, 686);
+            this.usrRequestData.Name = "usrRequestData";
+            this.usrRequestData.RowTemplate.Height = 28;
+            this.usrRequestData.Size = new System.Drawing.Size(955, 594);
+            this.usrRequestData.TabIndex = 32;
+            // 
+            // jukeboxDataSetBindingSource
+            // 
+            this.jukeboxDataSetBindingSource.DataSource = this.jukeboxDataSet;
+            this.jukeboxDataSetBindingSource.Position = 0;
+            // 
+            // jukeboxDataSet
+            // 
+            this.jukeboxDataSet.DataSetName = "jukeboxDataSet";
+            this.jukeboxDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 686);
+            this.ClientSize = new System.Drawing.Size(1426, 1324);
+            this.Controls.Add(this.usrRequestData);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -331,6 +361,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usrRequestData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,5 +396,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox boxAddGenre;
+        private System.Windows.Forms.DataGridView usrRequestData;
+        private System.Windows.Forms.BindingSource jukeboxDataSetBindingSource;
+        private jukeboxDataSet jukeboxDataSet;
     }
 }

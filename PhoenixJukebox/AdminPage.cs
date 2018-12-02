@@ -19,6 +19,7 @@ namespace PhoenixJukebox
             InitializeComponent();
             FillGenreCombo();
             FillAlbumCombo();
+            loadPlaylist(usrRequestData);
         }
 
         string connectionString = "server = localhost; user id = root; password = prAc7ice2018!; database = jukebox";
@@ -35,6 +36,7 @@ namespace PhoenixJukebox
             boxAddGenre.Items.Add("Hip Hop");
             boxAddGenre.Items.Add("Jazz");
             boxAddGenre.Items.Add("Pop");
+            boxAddGenre.Items.Add("R&B");
             boxAddGenre.Items.Add("Reggae");
             boxAddGenre.Items.Add("Rock");
         }
@@ -186,6 +188,29 @@ namespace PhoenixJukebox
             p1.ShowDialog();
         }
 
+        public void loadPlaylist(DataGridView usrRequestData)
+        {
+            MySqlConnection con = new MySqlConnection(connectionString);
+            MySqlCommand searchQuery = new MySqlCommand("select * from jukebox.usrrequest Order by idReqNum;", con);
+
+            try
+            {
+                con.Open();
+                using (MySqlDataReader reader = searchQuery.ExecuteReader())
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    usrRequestData.AutoGenerateColumns = true;
+                    usrRequestData.DataSource = dt;
+                    usrRequestData.Refresh();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
 
     }
 }

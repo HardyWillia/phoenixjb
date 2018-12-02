@@ -28,7 +28,7 @@ namespace PhoenixJukebox
         public void loadPlaylist(DataGridView dataGridView1)
         {
             MySqlConnection con = new MySqlConnection(connectionString);        
-            MySqlCommand searchQuery = new MySqlCommand("select * from jukebox.playlist Order by songQue;", con);
+            MySqlCommand searchQuery = new MySqlCommand("select songQue, Songs_songName AS Song, Songs_artistName AS Artist from jukebox.playlist Order by songQue;", con);
 
             try
                 {   
@@ -47,6 +47,11 @@ namespace PhoenixJukebox
                     MessageBox.Show(ex.Message);
                 }
             
+        }
+
+        private void viewPlaylist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

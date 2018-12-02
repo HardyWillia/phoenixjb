@@ -90,6 +90,12 @@
     <Compile Include="ResetLogin.Designer.cs">
       <DependentUpon>ResetLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserRequest.Designer.cs">
+      <DependentUpon>UserRequest.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +124,9 @@
     <EmbeddedResource Include="ResetLogin.resx">
       <DependentUpon>ResetLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserRequest.resx">
+      <DependentUpon>UserRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="jukeboxDataSet.xsc">
       <DependentUpon>jukeboxDataSet.xsd</DependentUpon>
     </None>
@@ -144,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Jukebox-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\artwork\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
