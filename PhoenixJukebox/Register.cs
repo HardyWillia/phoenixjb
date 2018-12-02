@@ -61,5 +61,12 @@ namespace PhoenixJukebox
         {
             txtUsername.Text = txtPassword.Text = string.Empty;
         }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login l1 = new Login();
+            l1.ShowDialog();
+        }
     }
 }
