@@ -216,6 +216,20 @@ namespace PhoenixJukebox
         {
             Application.Exit();
         }
+
+        private void btnHome1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login l1 = new Login();
+            l1.ShowDialog();
+        }
+
+        private void btnPlaylist1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DisplayPlaylist p1 = new DisplayPlaylist();
+            p1.ShowDialog();
+        }
     }
 }
 

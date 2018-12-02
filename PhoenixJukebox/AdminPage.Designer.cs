@@ -346,17 +346,21 @@
             // 
             // btnPlaylist1
             // 
-            this.btnPlaylist1.Location = new System.Drawing.Point(865, 95);
+            this.btnPlaylist1.Location = new System.Drawing.Point(865, 179);
             this.btnPlaylist1.Name = "btnPlaylist1";
-            this.btnPlaylist1.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaylist1.Size = new System.Drawing.Size(75, 106);
             this.btnPlaylist1.TabIndex = 1;
+            this.btnPlaylist1.Text = "Go to Playlist";
+            this.btnPlaylist1.Click += new System.EventHandler(this.btnPlaylist1_Click);
             // 
             // btnHome1
             // 
             this.btnHome1.Location = new System.Drawing.Point(865, 37);
             this.btnHome1.Name = "btnHome1";
-            this.btnHome1.Size = new System.Drawing.Size(75, 23);
+            this.btnHome1.Size = new System.Drawing.Size(75, 106);
             this.btnHome1.TabIndex = 0;
+            this.btnHome1.Text = "Go to Login";
+            this.btnHome1.Click += new System.EventHandler(this.btnHome1_Click);
             // 
             // AdminPage
             // 
