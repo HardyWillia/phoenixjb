@@ -144,7 +144,7 @@ namespace PhoenixJukebox
             {
                 MySqlConnection con = new MySqlConnection(connectionString);
 
-                MySqlCommand filterCommand = new MySqlCommand("select s.*, AlbGenre from jukebox.songs s join jukebox.album a ON a.idAlbum = s.Album_idAlbum where s.artistName='" + boxArtist.Text + "' group by s.Album_idAlbum;", con);
+                MySqlCommand filterCommand = new MySqlCommand("select s.songName, a.AlbGenre from jukebox.songs s join jukebox.album a ON a.idAlbum = s.Album_idAlbum where s.artistName='" + boxArtist.Text + "';", con);
                 MySqlDataReader myReader;
 
                 con.Open();
@@ -154,7 +154,7 @@ namespace PhoenixJukebox
                 {
                     //Automatically put the matching artist for the song selected into the box
                     string aName = myReader.GetString("songName");
-                    boxSong.Text = aName;
+                    boxSong.Items.Add(aName);
                     string gName = myReader.GetString("AlbGenre");
                     textGenre.Text = gName;
 

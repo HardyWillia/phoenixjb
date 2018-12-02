@@ -59,6 +59,8 @@
             this.usrRequestData = new System.Windows.Forms.DataGridView();
             this.jukeboxDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jukeboxDataSet = new PhoenixJukebox.jukeboxDataSet();
+            this.btnPlaylist1 = new System.Windows.Forms.Button();
+            this.btnHome1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -292,7 +294,7 @@
             this.groupBox2.Controls.Add(this.labelGenre);
             this.groupBox2.Location = new System.Drawing.Point(16, 143);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(936, 273);
+            this.groupBox2.Size = new System.Drawing.Size(796, 273);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Album";
@@ -314,7 +316,7 @@
             this.groupBox3.Controls.Add(this.btnDelete);
             this.groupBox3.Location = new System.Drawing.Point(16, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(787, 106);
+            this.groupBox3.Size = new System.Drawing.Size(796, 106);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete Song";
@@ -323,12 +325,13 @@
             // 
             this.usrRequestData.AllowUserToOrderColumns = true;
             this.usrRequestData.AutoGenerateColumns = false;
+            this.usrRequestData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.usrRequestData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usrRequestData.DataSource = this.jukeboxDataSetBindingSource;
-            this.usrRequestData.Location = new System.Drawing.Point(16, 686);
+            this.usrRequestData.Location = new System.Drawing.Point(16, 698);
             this.usrRequestData.Name = "usrRequestData";
             this.usrRequestData.RowTemplate.Height = 28;
-            this.usrRequestData.Size = new System.Drawing.Size(955, 594);
+            this.usrRequestData.Size = new System.Drawing.Size(942, 582);
             this.usrRequestData.TabIndex = 32;
             // 
             // jukeboxDataSetBindingSource
@@ -341,11 +344,34 @@
             this.jukeboxDataSet.DataSetName = "jukeboxDataSet";
             this.jukeboxDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // btnPlaylist1
+            // 
+            this.btnPlaylist1.Location = new System.Drawing.Point(837, 143);
+            this.btnPlaylist1.Name = "btnPlaylist1";
+            this.btnPlaylist1.Size = new System.Drawing.Size(121, 44);
+            this.btnPlaylist1.TabIndex = 33;
+            this.btnPlaylist1.Text = "Go to Playlist";
+            this.btnPlaylist1.UseVisualStyleBackColor = true;
+            this.btnPlaylist1.Click += new System.EventHandler(this.btnPlaylist1_Click);
+            // 
+            // btnHome1
+            // 
+            this.btnHome1.Location = new System.Drawing.Point(837, 210);
+            this.btnHome1.Name = "btnHome1";
+            this.btnHome1.Size = new System.Drawing.Size(121, 44);
+            this.btnHome1.TabIndex = 35;
+            this.btnHome1.Text = "Go to Login";
+            this.btnHome1.UseVisualStyleBackColor = true;
+            this.btnHome1.Click += new System.EventHandler(this.btnHome1_Click);
+            // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1426, 1324);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(996, 1050);
+            this.Controls.Add(this.btnHome1);
+            this.Controls.Add(this.btnPlaylist1);
             this.Controls.Add(this.usrRequestData);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -399,5 +425,7 @@
         private System.Windows.Forms.DataGridView usrRequestData;
         private System.Windows.Forms.BindingSource jukeboxDataSetBindingSource;
         private jukeboxDataSet jukeboxDataSet;
+        private System.Windows.Forms.Button btnPlaylist1;
+        private System.Windows.Forms.Button btnHome1;
     }
 }

@@ -191,7 +191,7 @@ namespace PhoenixJukebox
         public void loadPlaylist(DataGridView usrRequestData)
         {
             MySqlConnection con = new MySqlConnection(connectionString);
-            MySqlCommand searchQuery = new MySqlCommand("select * from jukebox.usrrequest Order by idReqNum;", con);
+            MySqlCommand searchQuery = new MySqlCommand("select idReqNum AS ID, artist AS Artist, songTitle AS 'Song Title', albName AS 'Album Name' from jukebox.usrrequest Order by idReqNum;", con);
 
             try
             {
@@ -212,6 +212,19 @@ namespace PhoenixJukebox
 
         }
 
+        private void btnPlaylist1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DisplayPlaylist p1 = new DisplayPlaylist();
+            p1.ShowDialog();
+        }
+
+        private void btnHome1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login l1 = new Login();
+            l1.ShowDialog();
+        }
     }
 }
 
