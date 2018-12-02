@@ -212,6 +212,10 @@ namespace PhoenixJukebox
 
         }
 
+        private void AdminPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 

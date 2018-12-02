@@ -354,6 +354,7 @@
             this.Controls.Add(this.btnHome);
             this.Name = "AdminPage";
             this.Text = "AdminPage";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPage_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
