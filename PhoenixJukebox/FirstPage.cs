@@ -115,6 +115,7 @@ namespace PhoenixJukebox
         private void btnCancel_Click(object sender, EventArgs e)
         {
             textGenre.Text = boxSong.Text = boxArtist.Text = string.Empty;
+            boxSong.Items.Clear();
         }
 
         private void boxGenre_SelectedIndexChanged(object sender, EventArgs e)

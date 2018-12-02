@@ -39,7 +39,6 @@ namespace PhoenixJukebox
                     con.Open();
                     myReader = insertCommand.ExecuteReader();
                         MessageBox.Show("Registered successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtUsername.Text = txtPassword.Text = string.Empty;
                     while (myReader.Read())
                     {
 
