@@ -27,7 +27,8 @@ namespace PhoenixJukebox
         public void loadPlaylist(DataGridView dataGridView1)
         {
             MySqlConnection con = new MySqlConnection(connectionString);        
-            MySqlCommand searchQuery = new MySqlCommand("select distinct songQue, Songs_songName AS Song, Songs_artistName AS Artist, audioFile, Albname AS Album from jukebox.playlist, jukebox.songs, jukebox.album group by Songs_songName Order by songQue;", con);
+            MySqlCommand searchQuery = 
+                new MySqlCommand("select distinct p.songQue, p.Songs_songName AS Song, p.Songs_artistName AS Artist, s.audioFile, a.AlbName AS Album, a.Albart AS Artwork from jukebox.playlist p, jukebox.songs s join jukebox.album a ON a.idAlbum = s.Album_idAlbum where p.Songs_songName = s.songName Order by songQue; ", con);
 
             try
                 {   
@@ -51,6 +52,7 @@ namespace PhoenixJukebox
             
         }
 
+        //Byte[] ImageByte;
         private void viewPlaylist_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex >= 0)
@@ -62,6 +64,15 @@ namespace PhoenixJukebox
                 txtAlbum.Text = row.Cells["Album"].Value.ToString();
                 txtAudio.Text = row.Cells["audioFile"].Value.ToString();
 
+                //TODO: Maybe another way to get it to work?
+                //int bufferSize = 1000;
+                //DataSet ds = new DataSet();
+                //int c = ds.Tables["Artwork"].Rows.Count;
+                //Byte[] byteBLOBData = new Byte[bufferSize];
+                //byteBLOBData = (Byte[])(ds.Tables["Artwork"].Rows[c - 1]["Artwork"]);
+                //MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
+                //pictAlbArt.Image = Image.FromStream(stmBLOBData);
+
                 //TODO: Get the artwork to appear in the Picture Box
                 //byte[] img = (byte[])viewPlaylist.CurrentRow.Cells["Albart"].Value;
                 //if (img == null)
@@ -71,7 +82,7 @@ namespace PhoenixJukebox
                 //    MemoryStream ms = new MemoryStream(img);
                 //    pictAlbArt.Image = Image.FromStream(ms);
                 //}
-             
+
 
             }
         }
