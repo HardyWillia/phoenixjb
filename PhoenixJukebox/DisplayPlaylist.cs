@@ -48,5 +48,10 @@ namespace PhoenixJukebox
                 }
             
         }
+
+        private void viewPlaylist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

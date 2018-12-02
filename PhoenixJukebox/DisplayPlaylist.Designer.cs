@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.viewPlaylist = new System.Windows.Forms.DataGridView();
+            this.jukeboxDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jukeboxDataSet = new PhoenixJukebox.jukeboxDataSet();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.jukeboxDataSet = new PhoenixJukebox.jukeboxDataSet();
-            this.jukeboxDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.viewPlaylist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // viewPlaylist
@@ -55,6 +55,17 @@
             this.viewPlaylist.RowTemplate.Height = 28;
             this.viewPlaylist.Size = new System.Drawing.Size(637, 402);
             this.viewPlaylist.TabIndex = 0;
+            this.viewPlaylist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewPlaylist_CellContentClick);
+            // 
+            // jukeboxDataSetBindingSource
+            // 
+            this.jukeboxDataSetBindingSource.DataSource = this.jukeboxDataSet;
+            this.jukeboxDataSetBindingSource.Position = 0;
+            // 
+            // jukeboxDataSet
+            // 
+            this.jukeboxDataSet.DataSetName = "jukeboxDataSet";
+            this.jukeboxDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pictureBox1
             // 
@@ -98,16 +109,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Now Playing";
             // 
-            // jukeboxDataSet
-            // 
-            this.jukeboxDataSet.DataSetName = "jukeboxDataSet";
-            this.jukeboxDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // jukeboxDataSetBindingSource
-            // 
-            this.jukeboxDataSetBindingSource.DataSource = this.jukeboxDataSet;
-            this.jukeboxDataSetBindingSource.Position = 0;
-            // 
             // DisplayPlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -119,11 +120,11 @@
             this.Text = "DisplayPlaylist";
             this.Load += new System.EventHandler(this.DisplayPlaylist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewPlaylist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jukeboxDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
