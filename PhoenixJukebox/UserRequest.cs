@@ -35,6 +35,7 @@ namespace PhoenixJukebox
             boxAddGenre.Items.Add("Jazz");
             boxAddGenre.Items.Add("Pop");
             boxAddGenre.Items.Add("R&B");
+            boxAddGenre.Items.Add("Rap");
             boxAddGenre.Items.Add("Reggae");
             boxAddGenre.Items.Add("Rock");
         }
@@ -52,7 +53,7 @@ namespace PhoenixJukebox
                 {
                     if (con.State == System.Data.ConnectionState.Closed)
                         con.Open();
-                    using (MySqlCommand cmd = new MySqlCommand("insert into jukebox.usrRequest(artist, songTitle, albName) values ('" + textArtist.Text + "', '" + textSong.Text + "', '" + textAlbum.Text + "')", con))
+                    using (MySqlCommand cmd = new MySqlCommand("insert into jukebox.usrrequest(artist, songTitle, albName) values ('" + textArtist.Text + "', '" + textSong.Text + "', '" + textAlbum.Text + "')", con))
                     {
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
