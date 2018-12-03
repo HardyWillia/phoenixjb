@@ -39,7 +39,6 @@ namespace PhoenixJukebox
                     con.Open();
                     myReader = insertCommand.ExecuteReader();
                         MessageBox.Show("Registered successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtUsername.Text = txtPassword.Text = string.Empty;
                     while (myReader.Read())
                     {
 
@@ -61,6 +60,13 @@ namespace PhoenixJukebox
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtUsername.Text = txtPassword.Text = string.Empty;
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login l1 = new Login();
+            l1.ShowDialog();
         }
     }
 }

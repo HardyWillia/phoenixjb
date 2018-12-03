@@ -63,6 +63,26 @@ namespace PhoenixJukebox.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap insert_here {
+            get {
+                object obj = ResourceManager.GetObject("insert-here", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inserthere {
+            get {
+                object obj = ResourceManager.GetObject("inserthere", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Jukebox_icon {
             get {
                 object obj = ResourceManager.GetObject("Jukebox-icon", resourceCulture);
