@@ -99,7 +99,7 @@ namespace PhoenixJukebox
                     MessageBox.Show("Deletion Successful");
                     this.Hide();
                     AdminPage a1 = new AdminPage();
-                    a1.ShowDialog();                    
+                    a1.ShowDialog();
                 }
                 else
                 {
@@ -136,10 +136,10 @@ namespace PhoenixJukebox
                 {
                     if (con.State == System.Data.ConnectionState.Closed)
                         con.Open();
-                    using (MySqlCommand cmd = new MySqlCommand("insert into jukebox.album(AlbName, AlbGenre, Albart) values ('" + txtAlbName.Text + "', '" + boxAddGenre.Text + "', '" +pictureBox1.ImageLocation+"')", con))
-                        
+                    using (MySqlCommand cmd = new MySqlCommand("insert into jukebox.album(AlbName, AlbGenre, Albart) values ('" + txtAlbName.Text + "', '" + boxAddGenre.Text + "', '" + pictureBox1.ImageLocation + "')", con))
+
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     AdminPage a1 = new AdminPage();
                     a1.ShowDialog();
@@ -160,9 +160,14 @@ namespace PhoenixJukebox
                     if (con.State == System.Data.ConnectionState.Closed)
                         con.Open();
                     using (MySqlCommand cmd = new MySqlCommand("insert into jukebox.songs(songName, artistName, audioFile, Album_idAlbum) values" +
-                        " ('" + txtSongTitle.Text + "', '" + txtSongArt.Text + "', '" + txtSongLink.Text + "' ,  (select idAlbum from jukebox.album where albName = '" +boxAlbm.Text+ "'))", con))
+                        " ('" + txtSongTitle.Text + "', '" + txtSongArt.Text + "', '" + txtSongLink.Text + "' ,  (select idAlbum from jukebox.album where albName = '" + boxAlbm.Text + "'))", con))
                         cmd.ExecuteNonQuery();
                     MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    using (MySqlCommand del = new MySqlCommand("delete from jukebox.usrrequest where artist = '" + txtSongArt.Text + "' and songTitle = '" + txtSongTitle.Text + "'; ", con))
+                        del.ExecuteNonQuery();
+
+
                     this.Hide();
                     AdminPage a1 = new AdminPage();
                     a1.ShowDialog();
@@ -191,7 +196,7 @@ namespace PhoenixJukebox
         public void loadPlaylist(DataGridView usrRequestData)
         {
             MySqlConnection con = new MySqlConnection(connectionString);
-            MySqlCommand searchQuery = new MySqlCommand("select * from jukebox.usrrequest Order by idReqNum;", con);
+            MySqlCommand searchQuery = new MySqlCommand("select artist as Artist, songTitle as 'Song Title', albName as 'Album Name' from jukebox.usrrequest;", con);
 
             try
             {
@@ -219,19 +224,16 @@ namespace PhoenixJukebox
 
         private void btnHome1_Click(object sender, EventArgs e)
         {
-            Login lg2 = new Login();
-            lg2.ShowDialog();
+            this.Hide();
+            Login l1 = new Login();
+            l1.ShowDialog();
         }
 
         private void btnPlaylist1_Click(object sender, EventArgs e)
         {
-            DisplayPlaylist dp2 = new DisplayPlaylist();
-            dp2.ShowDialog();
+            this.Hide();
+            DisplayPlaylist p1 = new DisplayPlaylist();
+            p1.ShowDialog();
         }
     }
 }
-
-
-
-
-
