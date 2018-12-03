@@ -348,22 +348,24 @@
             // 
             this.btnPlaylist1.Location = new System.Drawing.Point(865, 95);
             this.btnPlaylist1.Name = "btnPlaylist1";
-            this.btnPlaylist1.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaylist1.Size = new System.Drawing.Size(150, 35);
             this.btnPlaylist1.TabIndex = 1;
+            this.btnPlaylist1.Text = "Return to Playlist";
             // 
             // btnHome1
             // 
             this.btnHome1.Location = new System.Drawing.Point(865, 37);
             this.btnHome1.Name = "btnHome1";
-            this.btnHome1.Size = new System.Drawing.Size(75, 23);
+            this.btnHome1.Size = new System.Drawing.Size(150, 35);
             this.btnHome1.TabIndex = 0;
+            this.btnHome1.Text = "Return Home";
             // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(996, 1050);
+            this.ClientSize = new System.Drawing.Size(1260, 1050);
             this.Controls.Add(this.btnHome1);
             this.Controls.Add(this.btnPlaylist1);
             this.Controls.Add(this.usrRequestData);
