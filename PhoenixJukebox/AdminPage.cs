@@ -163,6 +163,11 @@ namespace PhoenixJukebox
                         " ('" + txtSongTitle.Text + "', '" + txtSongArt.Text + "', '" + txtSongLink.Text + "' ,  (select idAlbum from jukebox.album where albName = '" +boxAlbm.Text+ "'))", con))
                         cmd.ExecuteNonQuery();
                     MessageBox.Show("Record Inserted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    using (MySqlCommand del = new MySqlCommand("delete from jukebox.usrrequest where artist = '" +txtSongArt.Text+ "' and songTitle = '" +txtSongTitle.Text+ "'; ", con))
+                        del.ExecuteNonQuery();
+
+
                     this.Hide();
                     AdminPage a1 = new AdminPage();
                     a1.ShowDialog();
@@ -191,7 +196,7 @@ namespace PhoenixJukebox
         public void loadPlaylist(DataGridView usrRequestData)
         {
             MySqlConnection con = new MySqlConnection(connectionString);
-            MySqlCommand searchQuery = new MySqlCommand("select * from jukebox.usrrequest Order by idReqNum;", con);
+            MySqlCommand searchQuery = new MySqlCommand("select artist as Artist, songTitle as 'Song Title', albName as 'Album Name' from jukebox.usrrequest;", con);
 
             try
             {

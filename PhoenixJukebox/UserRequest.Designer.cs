@@ -39,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textSong = new System.Windows.Forms.TextBox();
             this.textArtist = new System.Windows.Forms.TextBox();
-            this.lblUser = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,29 +147,17 @@
             this.textArtist.Size = new System.Drawing.Size(253, 26);
             this.textArtist.TabIndex = 24;
             // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(52, 9);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(51, 20);
-            this.lblUser.TabIndex = 25;
-            this.lblUser.Text = "label4";
-            this.lblUser.Click += new System.EventHandler(this.lblUser_Click);
-            // 
             // UserRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 659);
-            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.groupBox1);
             this.Name = "UserRequest";
             this.Text = "UserRequest";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -187,6 +174,5 @@
         private System.Windows.Forms.TextBox textArtist;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button submitBtn;
-        private System.Windows.Forms.Label lblUser;
     }
 }
