@@ -67,7 +67,8 @@ namespace PhoenixJukebox
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            textArtist.Text = textAlbum.Text = textSong.Text = string.Empty;
+            boxAddGenre.Items.Clear(); 
         }
 
         private void lblUser_Click(object sender, EventArgs e)
