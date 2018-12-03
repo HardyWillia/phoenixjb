@@ -351,6 +351,7 @@
             this.btnPlaylist1.Size = new System.Drawing.Size(150, 35);
             this.btnPlaylist1.TabIndex = 1;
             this.btnPlaylist1.Text = "Return to Playlist";
+            this.btnPlaylist1.Click += new System.EventHandler(this.btnPlaylist1_Click);
             // 
             // btnHome1
             // 
@@ -359,6 +360,7 @@
             this.btnHome1.Size = new System.Drawing.Size(150, 35);
             this.btnHome1.TabIndex = 0;
             this.btnHome1.Text = "Return Home";
+            this.btnHome1.Click += new System.EventHandler(this.btnHome1_Click);
             // 
             // AdminPage
             // 
