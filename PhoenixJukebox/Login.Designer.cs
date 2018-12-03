@@ -35,8 +35,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnForgot = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,8 +70,10 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(113, 168);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(257, 26);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // button1
             // 
@@ -111,16 +113,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sign In";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PhoenixJukebox.Properties.Resources.Jukebox_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 95);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 205);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnForgot
             // 
             this.btnForgot.Location = new System.Drawing.Point(208, 321);
@@ -130,6 +122,16 @@
             this.btnForgot.Text = "Change Password";
             this.btnForgot.UseVisualStyleBackColor = true;
             this.btnForgot.Click += new System.EventHandler(this.btnForgot_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PhoenixJukebox.Properties.Resources.Jukebox_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 95);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(172, 205);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 

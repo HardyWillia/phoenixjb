@@ -124,9 +124,10 @@
             // 
             // pictAlbArt
             // 
+            this.pictAlbArt.Image = global::PhoenixJukebox.Properties.Resources.insert_here;
             this.pictAlbArt.Location = new System.Drawing.Point(31, 49);
             this.pictAlbArt.Name = "pictAlbArt";
-            this.pictAlbArt.Size = new System.Drawing.Size(249, 211);
+            this.pictAlbArt.Size = new System.Drawing.Size(249, 237);
             this.pictAlbArt.TabIndex = 1;
             this.pictAlbArt.TabStop = false;
             // 
